@@ -1,0 +1,19 @@
+{
+  "validUpdate": {
+    "name": "UpdatedFirst"
+  },
+  "missingFields": {
+    "firstname": "UpdatedFirst",
+    "lastname": "UpdatedLast",
+    "address1": "456 Updated Street",
+    "city": "NewCity"
+  },
+  "nonExistingUser": {
+    "email": "abbaszainam@gmail.com",
+    "firstname": "UpdatedFirst",
+    "lastname": "UpdatedLast",
+    "address1": "456 Updated Street",
+    "city": "NewCity",
+    "password": "12345678"
+  }
+}

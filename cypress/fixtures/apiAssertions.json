@@ -1,0 +1,31 @@
+{
+  "unsupportedMethod": { "code": 405, "message": "This request method is not supported." },
+  "successCode": 200,
+  "registration": {
+    "success": { "code": 201, "message": "User created!" },
+    "duplicate": { "code": 400, "message": "Email already exists!" },
+    "missing": { "code": 400, "message": "email parameter is missing in POST request." }
+  },
+  "delete": {
+    "success": { "code": 200, "message": "Account deleted!" },
+    "notFound": { "code": 404, "message": "Account not found!" }
+  },
+  "login": {
+    "success": { "code": 200, "message": "User exists!" },
+    "notFound": { "code": 404, "message": "User not found!" },
+    "missing": { "code": 400, "message": "Bad request, email or password parameter is missing in POST request." }
+  },
+  "search": {
+    "missing": { "code": 400, "message": "Bad request, search_product parameter is missing in POST request." }
+  },
+  "updateAccount": {
+    "success": { "code": 200, "message": "User updated!" },
+    "missing": { "code": 400, "message": "password parameter is missing in PUT request" },
+    "notFound": { "code": 404, "message": "Account not found!" }
+  },
+  "userDetails": {
+    "notFound": { "code": 404, "message": "Account not found with this email, try another email!" },
+    "missing": { "code": 400, "message": "Bad request, email parameter is missing in GET request." }
+  }
+ 
+}

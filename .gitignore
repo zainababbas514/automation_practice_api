@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Cypress generated files
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+
+# IDE files
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
