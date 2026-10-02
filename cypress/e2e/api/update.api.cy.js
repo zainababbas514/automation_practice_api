@@ -32,7 +32,7 @@ describe('Update Account API', () => {
 
   it('should reject update with missing required fields', () => {
     const missingFields = {
-      email: Cypress.env('testEmail'),
+      password: Cypress.env('testPassword'),
       ...updateData.missingFields
     };
 

@@ -27,12 +27,12 @@ describe('Create Account API', () => {
   });
 
   it('should reject account creation with an existing email', () => {
-    const existingEmail = `test.user.${Date.now()}@example.com`;
+    const email = `test.user.${Date.now()}@example.com`;
 
     // Create the account first
     cy.postRequest('api/createAccount', {
       ...basePayload,
-      email: existingEmail
+      email: email
     }).then((response) => {
       cy.getResponseBody(response).then((body) => {
         expect(body.responseCode).to.eq(expected.success.code);
@@ -42,7 +42,7 @@ describe('Create Account API', () => {
     // Try to create another account with the same email
     cy.postRequest('api/createAccount', {
       ...basePayload,
-      email: existingEmail
+      email: email
     }).then((response) => {
       cy.getResponseBody(response).then((body) => {
         expect(body.responseCode).to.eq(expected.duplicate.code);

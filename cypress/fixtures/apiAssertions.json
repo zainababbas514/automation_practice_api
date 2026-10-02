@@ -20,7 +20,7 @@
   },
   "updateAccount": {
     "success": { "code": 200, "message": "User updated!" },
-    "missing": { "code": 400, "message": "password parameter is missing in PUT request" },
+    "missing": { "code": 400, "message": "email parameter is missing in PUT request" },
     "notFound": { "code": 404, "message": "Account not found!" }
   },
   "userDetails": {

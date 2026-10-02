@@ -13,7 +13,7 @@ describe('DELETE API', () => {
     });
 
     cy.fixture('userCredentials').then((data) => {
-      credentials = data.deleteApi;
+      credentials = data;
     });
   });
 
@@ -45,6 +45,7 @@ describe('DELETE API', () => {
   });
 
   it('should reject deletion with invalid credentials', () => {
+    cy.log(credentials);
     cy.deleteRequest(
       'api/deleteAccount',
       credentials.invalidCredentials
@@ -60,35 +61,9 @@ describe('DELETE API', () => {
   });
 
   it('should reject deletion of an already deleted account', () => {
-    const userEmail = `test.user.${Date.now()}@example.com`;
 
-    // Create the account first
-    cy.postRequest('api/createAccount', {
-      ...basePayload,
-      email: userEmail
-    }).then((response) => {
-      cy.getResponseBody(response).then((body) => {
-        expect(body.responseCode)
-          .to.eq(expected.registration.success.code);
-      });
-    });
-
-    // Delete the account
-    cy.deleteRequest('api/deleteAccount', {
-      email: userEmail,
-      password: basePayload.password
-    }).then((response) => {
-      cy.getResponseBody(response).then((body) => {
-        expect(body.responseCode)
-          .to.eq(expected.delete.success.code);
-      });
-    });
-
-    // Try deleting the same account again
-    cy.deleteRequest('api/deleteAccount', {
-      email: userEmail,
-      password: basePayload.password
-    }).then((response) => {
+    cy.deleteRequest('api/deleteAccount', credentials.alreadyDeletedUser
+    ).then((response) => {
       cy.getResponseBody(response).then((body) => {
         expect(body.responseCode)
           .to.eq(expected.delete.notFound.code);

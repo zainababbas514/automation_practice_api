@@ -31,7 +31,7 @@ describe('User Details by Email API', () => {
   });
 
   it('should reject a non-existing email', () => {
-    const email = accounts.loginApi.invalidEmail;
+    const email = accounts.invalidCredentials.email;
 
     cy.getRequest('api/getUserDetailByEmail', { email }).then((response) => {
       cy.getResponseBody(response).then((body) => {

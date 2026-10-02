@@ -10,7 +10,7 @@ describe('Brands API', () => {
   it('should return all brands', () => {
     cy.getRequest('api/brandsList').then((response) => {
       cy.getResponseBody(response).then((body) => {
-        expect(body.responseCode).to.eq(200);
+        expect(body.responseCode).to.eq(expected.successCode);
 
         expect(body.brands)
           .to.be.an('array')

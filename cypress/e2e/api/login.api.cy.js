@@ -8,7 +8,7 @@ describe('Login API', () => {
     });
 
     cy.fixture('userCredentials').then((data) => {
-      credentials = data.loginApi;
+      credentials = data;
     });
   });
 
@@ -35,7 +35,7 @@ describe('Login API', () => {
 
     cy.postRequest('api/verifyLogin', {
       email: email,
-      password: credentials.invalidPassword
+      password: credentials.invalidCredentials.password
     }).then((response) => {
       cy.getResponseBody(response).then((body) => {
         expect(body.responseCode)

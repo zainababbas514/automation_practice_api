@@ -6,7 +6,6 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test": "cypress run",
     "test:browser": "cypress run --browser",
     "test:spec": "cypress run --spec"
   },
