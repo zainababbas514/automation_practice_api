@@ -63,7 +63,7 @@ Detailed manual test cases are maintained separately in the `testCases` folder.
 * API response code and message assertions
 * Response body validation
 * Dynamic email generation for account creation
-* Reusable API assertion data
+* API assertion data
 * Automatic screenshots on test failure
 * Mochawesome HTML reporting
 * Configurable application `baseUrl`
@@ -223,15 +223,6 @@ cd APITesting
 npm install
 ```
 
-### 4. Configure Environment Variables
-
-Create a `.env` file in the project root based on `.env.example`:
-
-```text
-TEST_EMAIL=your-email@example.com
-TEST_PASSWORD=your-password
-```
-
 ## ▶️ Running Tests
 
 The project provides npm scripts in `package.json` for common Cypress commands.
@@ -248,12 +239,6 @@ This opens the Cypress Test Runner, where individual API test files can be selec
 
 ```bash
 npm run cy:run
-```
-
-You can also use the standard npm test command:
-
-```bash
-npm test
 ```
 
 ### Run Tests in a Specific Browser
@@ -290,7 +275,6 @@ The main scripts defined in `package.json` are:
 "scripts": {
   "cy:open": "cypress open",
   "cy:run": "cypress run",
-  "test": "cypress run",
   "test:browser": "cypress run --browser",
   "test:spec": "cypress run --spec"
 }
@@ -300,7 +284,6 @@ The main scripts defined in `package.json` are:
 | -------------------------------- | ------------------------------------------------ |
 | `npm run cy:open`                | Opens Cypress in interactive mode                |
 | `npm run cy:run`                 | Runs the complete Cypress suite in headless mode |
-| `npm test`                       | Runs the complete Cypress suite                  |
 | `npm run test:browser -- chrome` | Runs tests in the specified browser              |
 | `npm run test:spec -- <spec>`    | Runs a specific Cypress spec                     |
 
